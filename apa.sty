@@ -1,0 +1,13 @@
+\ProvidesPackage{apa}
+\RequirePackage[style=apa]{biblatex}
+
+\DeclareOption*
+{ \PassOptionsToPackage{\CurrentOption}{biblatex} }
+
+\ProcessOptions\relax
+
+\DeclareLanguageMapping{dutch}{dutch-apa}
+\DeclareLanguageMapping{english}{british-apa}
+\DeclareLanguageMapping{british}{british-apa}
+
+\endinput
