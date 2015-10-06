@@ -90,7 +90,7 @@
 \duolingual{@teacherslabel}{Teachers}{Docenten}
 \duolingual{@datelabel}{Date}{Datum}
 \duolingual{@hu}{Utrecht University of Applied Science\\}{Hogeschool Utrecht}
-\duolingual{@fac}{Faculty of Nature and Techonlogy}{Faculteit Natuur en Techniek}
+\duolingual{@fac}{Faculty of Nature and Technology}{Faculteit Natuur en Techniek}
 
 \def\@subtitle{}
 \def\@documenttype{}
