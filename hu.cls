@@ -58,8 +58,7 @@
   \definecolor{HU-Blue}{cmyk}{0.99, 0.01, 0.05, 0.05}
   \definecolor{HU-Red}{cmyk}{0, 0.81, 0.87, 0.15} }
 
-\RequirePackage{polyglossia, fontspec, xunicode, xltxtra}
-\RequirePackage[normalem]{ulem}
+\RequirePackage{polyglossia}
 \RequirePackage[autostyle]{csquotes}
 \RequirePackage[a4paper, textwidth=6.5in, textheight=9in, 
                 marginparsep=7pt, marginparwidth=.6in]{geometry}
