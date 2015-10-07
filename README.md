@@ -14,8 +14,8 @@ All memoir options are passed through, with the following exceptions:
 * `\subtitle{}` - a subtitle
 * `\documenttype{}` - will show its content on the title page between guillemets; used for describing the various document types required for different projects
 * `\version{}` - allows version information (or anything else) to be displayed at the bottom of the title page, above the logo
-* `\author{}` - multiple authors can be added by multiple `\author{}` calls
-* `\teacher{}` - multiple teachers can be added by multiple `\teacher{}` calls
+* `\author{}{}{}` - multiple authors can be added by multiple `\author{}` calls; accepts three arguments for given name, family name, and student number
+* `\teacher{}{}` - multiple teachers can be added by multiple `\teacher{}` calls; accepts two arguments for given name and student number
 * `\fac{}` - used to change the default Faculty of Nature and Technology / Faculteit Natuur en Techniek to something else
 
 
