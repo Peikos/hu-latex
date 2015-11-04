@@ -14,6 +14,11 @@
 \DeclareOption{nocolour}
 { \setboolean{@nocolour}{true} }
 
+\newboolean{@preservectr}
+\setboolean{@preservectr}{false}
+\DeclareOption{chaprecto}
+{ \setboolean{@preservectr}{true} }
+
 \newboolean{@10pt}
 \setboolean{@10pt}{false}
 \DeclareOption{10pt}
@@ -43,6 +48,9 @@
 \LoadClass[a4paper]{memoir}
 
 \RequirePackage{xcolor}
+
+\ifthenelse{\boolean{@preservectr}}{}
+{ \let\cleartorecto\newpage }
 
 \ifthenelse{\boolean{@nocolour}}
 { \definecolor{SkyBlue}{rgb}{0, 0, 0}
@@ -193,8 +201,6 @@
 \setsubsecheadstyle{\scshape\color{SkyBlue}} 
 
 \renewcommand*\footnoterule{}
-
-\let\cleartorecto\newpage
 
 \checkandfixthelayout
 

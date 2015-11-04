@@ -9,6 +9,7 @@ All memoir options are passed through, with the following exceptions:
 * `12pt` replaces `10pt` as default
 * `nocolour` disables the coloured headings and links
 * `dutch` will translate the title page / logo into dutch and sets the polyglossia language (defaults to English)
+* `chaprecto` preserves Memoir's default behaviour of starting chapters on a recto page. Disabled by default.
 
 # Commands
 * `\subtitle{}` - a subtitle
