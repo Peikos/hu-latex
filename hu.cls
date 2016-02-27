@@ -3,6 +3,11 @@
 
 \RequirePackage{calc,ifthen}
 
+\newboolean{@studentnr}
+\setboolean{@studentnr}{true}
+\DeclareOption{nostudentnr}
+{ \setboolean{@studentnr}{false}}
+
 \newboolean{@dutch}
 \setboolean{@dutch}{false}
 \DeclareOption{dutch}
@@ -28,7 +33,7 @@
 \setboolean{@11pt}{false}
 \DeclareOption{11pt}
 { \setboolean{@11pt}{true} }
-                                   
+
 \newboolean{@12pt}
 \setboolean{@12pt}{false}
 \DeclareOption{12pt}
@@ -68,9 +73,9 @@
 
 \RequirePackage{polyglossia}
 \RequirePackage[autostyle]{csquotes}
-\RequirePackage[a4paper, textwidth=6.5in, textheight=9in, 
+\RequirePackage[a4paper, textwidth=6.5in, textheight=9in,
                 marginparsep=7pt, marginparwidth=.6in]{geometry}
-\RequirePackage[bookmarks, colorlinks, breaklinks, 
+\RequirePackage[bookmarks, colorlinks, breaklinks,
                 urlcolor=Plum,
                 citecolor=Plum,
                 linkcolor=Black]
@@ -126,12 +131,15 @@
     \authorloop
    \end{tabular} }
 
+\renewcommand{\@author}[1]
+{ \csname author#1gname\endcsname \ \scshape \csname author#1fname\endcsname &
+  \ifthenelse{\boolean{@studentnr}}
+  { \csname author#1num\endcsname}{} \\ }
+
 \newcommand{\authorloop}
 { \addtocounter{curauthor}{1}
   \ifthenelse{\equal{\arabic{curauthor}}{\arabic{numauthors}}}{}
-  {          \csname author\arabic{curauthor}gname\endcsname\ 
-    \scshape \csname author\arabic{curauthor}fname\endcsname &
-             \csname author\arabic{curauthor}num\endcsname \\
+  { \@author{\arabic{curauthor}}
     \authorloop }}
 
 \newcounter{numteachers}
@@ -149,11 +157,13 @@
     \addtocounter{numteachers}{1}
     \teacherloop }
 
+\newcommand{\@teacher}[1]
+{ \csname teacher#1gname\endcsname \ \scshape \csname teacher#1fname\endcsname \\ }
+
 \newcommand{\teacherloop}
 { \addtocounter{curteacher}{1}
   \ifthenelse{\equal{\arabic{curteacher}}{\arabic{numteachers}}}{}
-  {          \csname teacher\arabic{curteacher}gname\endcsname\ 
-    { \scshape \csname teacher\arabic{curteacher}fname\endcsname } \\
+  { \@teacher{\arabic{curteacher}}
     \teacherloop }}
 
 \setlrmarginsandblock{4cm}{*}{*}
@@ -162,12 +172,12 @@
 
 \makefootrule {plain}{\textwidth}{\normalrulethickness}{\footruleskip}
 \makeheadrule{headings}{\textwidth}{\normalrulethickness}
-\makefootrule{headings}{\textwidth}{\normalrulethickness}{\footruleskip} 
+\makefootrule{headings}{\textwidth}{\normalrulethickness}{\footruleskip}
 \makefootrule{plain}{\textwidth}{\normalrulethickness}{\footruleskip}
 \makeevenhead{headings}{}{\large\leftmark}{}
-\makeoddhead{headings}{}{\large\rightmark}{} 
-\makeevenfoot{headings}{}{\large\thepage}{} 
-\makeoddfoot{headings}{}{\large\thepage}{} 
+\makeoddhead{headings}{}{\large\rightmark}{}
+\makeevenfoot{headings}{}{\large\thepage}{}
+\makeoddfoot{headings}{}{\large\thepage}{}
 \makeevenfoot{plain}{}{\large\thepage}{}
 \makeoddfoot{plain}{}{\large\thepage}{}
 
@@ -193,12 +203,12 @@
     { \chapnumfont \thechapter}}}
   \renewcommand*{\afterchapternum}{}}
 
-\chapterstyle{hangnum} 
+\chapterstyle{hangnum}
 
-\hangsecnum 
+\hangsecnum
 \setsecheadstyle{\scshape\color{DarkSkyBlue}}
 
-\setsubsecheadstyle{\scshape\color{SkyBlue}} 
+\setsubsecheadstyle{\scshape\color{SkyBlue}}
 
 \renewcommand*\footnoterule{}
 
@@ -207,36 +217,36 @@
 \renewcommand{\maketitle}
 { \thispagestyle{empty}
   \begin{center}
-  
+
   \mbox{}
   \vspace{20mm}
-  
+
   { \Huge \bfseries \@title }
 
   \vspace{2mm}
 
   { \LARGE \@subtitle }
-  
+
   \vspace{15mm}
 
   \ifthenelse{\equal{\@documenttype}{}}{}
   {{ \LARGE \scshape «\ \@documenttype\ » }}
-  
+
   \vspace{15mm}
-  
+
   \begin{tabular}{c}
     \bfseries \@datelabel \\
     \@date
   \end{tabular}
 
   \vspace{10mm}
-  
+
   \@authors
 
   \vspace{3mm}
 
   \@teachers
-  
+
   \vfill
 
   { \vspace{-20mm}
@@ -247,8 +257,8 @@
   \vspace{4mm}
 
   \@hu\ \@fac
-  
+
   \vspace{-30mm}
-  
+
   \end{center}
   \newpage }
