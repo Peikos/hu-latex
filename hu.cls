@@ -52,7 +52,7 @@
 
 \LoadClass[a4paper]{memoir}
 
-\RequirePackage{xcolor}
+\RequirePackage[table]{xcolor}
 
 \ifthenelse{\boolean{@preservectr}}{}
 { \let\cleartorecto\newpage }
@@ -71,6 +71,7 @@
   \definecolor{HU-Blue}{cmyk}{0.99, 0.01, 0.05, 0.05}
   \definecolor{HU-Red}{cmyk}{0, 0.81, 0.87, 0.15} }
 
+\RequirePackage[utf8]{inputenc}
 \RequirePackage{polyglossia}
 \RequirePackage[autostyle]{csquotes}
 \RequirePackage[a4paper, textwidth=6.5in, textheight=9in,
