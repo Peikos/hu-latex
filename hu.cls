@@ -101,6 +101,8 @@
 \duolingual{@authorslabel}{Authors}{Auteurs}
 \duolingual{@teacherlabel}{Teacher}{Docent}
 \duolingual{@teacherslabel}{Teachers}{Docenten}
+\duolingual{@organizationlabel}{Organization}{Organisatie}
+\duolingual{@organizationslabel}{Organizations}{Organisaties}
 \duolingual{@datelabel}{Date}{Datum}
 \duolingual{@hu}{Utrecht University of Applied Science\\}{Hogeschool Utrecht}
 \duolingual{@fac}{Faculty of Nature and Technology}{Faculteit Natuur en Techniek}
@@ -166,6 +168,27 @@
   \ifthenelse{\equal{\arabic{curteacher}}{\arabic{numteachers}}}{}
   { \@teacher{\arabic{curteacher}}
     \teacherloop }}
+
+\newcounter{numorganizations}
+\newcounter{curorganization}
+\setcounter{numorganizations}{0}
+\newcommand{\organization}[1]
+  { \addtocounter{numorganizations}{1}
+    \expandafter\def\csname organization\arabic{numorganizations}name\endcsname{#1}
+  }
+
+\newcommand{\@organizations}
+  { \setcounter{curorganization}{0}
+    { \bfseries \ifthenelse{\equal{\arabic{numorganizations}}{1}}{\@organizationlabel}{\@organizationslabel} } \\
+    \addtocounter{numorganizations}{1}
+    \organizationloop }
+
+\newcommand{\organizationloop}
+  { \addtocounter{curorganization}{1}
+    \ifthenelse{\equal{\arabic{curorganization}}{\arabic{numorganizations}}}{}
+  {          \csname organization\arabic{curorganization}name\endcsname\
+
+  \organizationloop }}
 
 \setlrmarginsandblock{4cm}{*}{*}
 \setulmarginsandblock{4cm}{*}{*}
@@ -247,6 +270,10 @@
   \vspace{3mm}
 
   \@teachers
+
+  \@organizations
+
+  \vspace{3mm}
 
   \vfill
 
