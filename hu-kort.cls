@@ -89,7 +89,7 @@
 \duolingual{@teacherlabel}{Teacher}{Docent}
 \duolingual{@teacherslabel}{Teachers}{Docenten}
 \duolingual{@hu}{Utrecht University of Applied Science}{Hogeschool Utrecht}
-\duolingual{@fac}{Faculty of Nature and Technology}{Faculteit Natuur en Techniek}
+\duolingual{@inst}{Institute of ICT}{Instituut voor ICT}
 
 \RequirePackage{fontspec, xunicode, xltxtra, polyglossia, wrapfig, fancyhdr}
 \RequirePackage[a4paper, textwidth=6.5in, textheight=9in, footskip=1in,
@@ -103,7 +103,7 @@
 \fancypagestyle{plain}
 { \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
-  \fancyfoot[C]{\footnotesize {\@hu\ --- \@fac}} }
+  \fancyfoot[C]{\footnotesize {\@hu\ --- \@inst}} }
 \pagestyle{plain}
 
 \def\@subtitle{}
