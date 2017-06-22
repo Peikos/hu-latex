@@ -1,0 +1,40 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass{hu}
+\usepackage[date=short,backend=biber]{apa}
+\addbibresource{literatuurlijst.bib}
+
+\title{Fancy Title}
+\subtitle{Subtitle}
+\documenttype{Final Report}
+\author{Name}{McNameFace}{0000042}
+\author{Random}{Person}{0000652}
+\organisation{Optional internship organisation}
+\teacher{Ir. Joop}{Kaldeway}
+\teacher{Ir. Henk}{van Nimwegen}
+
+\version{Version 0.1}
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+
+\chapter{Preface}
+\chapter{Executive Summary}
+\tableofcontents* % Hide ToC in ToC
+
+\mainmatter
+
+\chapter{Introduction}
+Some text introducing the topic, as suggested by \cite{citation}.
+\chapter{Content}
+\chapter{Conclusion}
+
+\appendix
+
+  \printbibliography
+\chapter{Additional information}
+\end{document}
