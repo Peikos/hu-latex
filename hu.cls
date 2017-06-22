@@ -158,7 +158,7 @@
 { \setcounter{curteacher}{0}
     { \bfseries \ifthenelse{\equal{\arabic{numteachers}}{1}}{\@teacherlabel}{\@teacherslabel} } \\
     \addtocounter{numteachers}{1}
-    \teacherloop }
+    \teacherloop \mbox{}\\ }
 
 \newcommand{\@teacher}[1]
 { \csname teacher#1gname\endcsname \ \scshape \csname teacher#1fname\endcsname \\ }
@@ -270,6 +270,8 @@
   \vspace{3mm}
 
   \@teachers
+
+  \vspace{3mm}
 
   \@organisations
 
