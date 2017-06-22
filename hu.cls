@@ -101,8 +101,8 @@
 \duolingual{@authorslabel}{Authors}{Auteurs}
 \duolingual{@teacherlabel}{Teacher}{Docent}
 \duolingual{@teacherslabel}{Teachers}{Docenten}
-\duolingual{@organizationlabel}{Organization}{Organisatie}
-\duolingual{@organizationslabel}{Organizations}{Organisaties}
+\duolingual{@organisationlabel}{Organisation}{Organisatie}
+\duolingual{@organisationslabel}{Organisations}{Organisaties}
 \duolingual{@datelabel}{Date}{Datum}
 \duolingual{@hu}{Utrecht University of Applied Science\\}{Hogeschool Utrecht}
 \duolingual{@fac}{Faculty of Nature and Technology}{Faculteit Natuur en Techniek}
@@ -169,26 +169,26 @@
   { \@teacher{\arabic{curteacher}}
     \teacherloop }}
 
-\newcounter{numorganizations}
-\newcounter{curorganization}
-\setcounter{numorganizations}{0}
-\newcommand{\organization}[1]
-  { \addtocounter{numorganizations}{1}
-    \expandafter\def\csname organization\arabic{numorganizations}name\endcsname{#1}
+\newcounter{numorganisations}
+\newcounter{curorganisation}
+\setcounter{numorganisations}{0}
+\newcommand{\organisation}[1]
+  { \addtocounter{numorganisations}{1}
+    \expandafter\def\csname organisation\arabic{numorganisations}name\endcsname{#1}
   }
 
-\newcommand{\@organizations}
-  { \setcounter{curorganization}{0}
-    { \bfseries \ifthenelse{\equal{\arabic{numorganizations}}{1}}{\@organizationlabel}{\@organizationslabel} } \\
-    \addtocounter{numorganizations}{1}
-    \organizationloop }
+\newcommand{\@organisations}
+  { \setcounter{curorganisation}{0}
+    { \bfseries \ifthenelse{\equal{\arabic{numorganisations}}{1}}{\@organisationlabel}{\@organisationslabel} } \\
+    \addtocounter{numorganisations}{1}
+    \organisationloop }
 
-\newcommand{\organizationloop}
-  { \addtocounter{curorganization}{1}
-    \ifthenelse{\equal{\arabic{curorganization}}{\arabic{numorganizations}}}{}
-  {          \csname organization\arabic{curorganization}name\endcsname\
+\newcommand{\organisationloop}
+  { \addtocounter{curorganisation}{1}
+    \ifthenelse{\equal{\arabic{curorganisation}}{\arabic{numorganisations}}}{}
+  {          \csname organisation\arabic{curorganisation}name\endcsname\
 
-  \organizationloop }}
+  \organisationloop }}
 
 \setlrmarginsandblock{4cm}{*}{*}
 \setulmarginsandblock{4cm}{*}{*}
@@ -271,7 +271,7 @@
 
   \@teachers
 
-  \@organizations
+  \@organisations
 
   \vspace{3mm}
 
