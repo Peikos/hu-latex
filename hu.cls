@@ -178,10 +178,11 @@
   }
 
 \newcommand{\@organisations}
-  { \setcounter{curorganisation}{0}
-    { \bfseries \ifthenelse{\equal{\arabic{numorganisations}}{1}}{\@organisationlabel}{\@organisationslabel} } \\
-    \addtocounter{numorganisations}{1}
-    \organisationloop }
+  { \ifthenelse{\equal{\arabic{numorganisations}}{0}}{\mbox{}}
+    { { \setcounter{curorganisation}{0}
+        \bfseries \ifthenelse{\equal{\arabic{numorganisations}}{1}}{\@organisationlabel}{\@organisationslabel} } \\
+      \addtocounter{numorganisations}{1}
+      \organisationloop } }
 
 \newcommand{\organisationloop}
   { \addtocounter{curorganisation}{1}
