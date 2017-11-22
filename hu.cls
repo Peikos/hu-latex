@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{hu}
 
-\RequirePackage{calc,ifthen}
+\RequirePackage{calc,ifthen,graphicx}
 
 \newboolean{@studentnr}
 \setboolean{@studentnr}{true}
