@@ -255,7 +255,7 @@
   \vspace{15mm}
 
   \ifthenelse{\equal{\@documenttype}{}}{}
-  {{ \LARGE \scshape «\ \@documenttype\ » }}
+  {{ \LARGE \scshape «\ \@documenttype\ »}}
 
   \vspace{15mm}
 
